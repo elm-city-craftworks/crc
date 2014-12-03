@@ -1,0 +1,75 @@
+## Account
+
+- Keeps balance and traffic.
+
+> Transaction
+> RemoteDB
+
+## Transaction
+
+- Validate + perform money transfer.
+- Keep audit info.
+
+> CardReader
+> Dispenser
+> RemoteDB
+> Action
+> Account
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## CardReader
+
+- Decodes strip.
+- Signals insertion.
+
+> Event
+> Transaction
+
+## Dispenser
+
+- Emits cash.
+- Signals success and empty.
+
+> Event
+> Transaction
+
+## RemoteDB
+
+- Retrieves accounts.
+- Records transactions.
+- Signals com status.
+
+> Event
+> Transaction
+> Account
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## Event
+
+- Queues signals.
+- Isolates H/W from user-interface.
+
+> Screen
+> CardReader
+> Dispenser
+> RemoteDB
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+## Screen
+
+- Displays prompts.
+- Dispatches Events to Actions.
+
+> Event
+> Action
+
+## Action
+
+- Sequences screens.
+- Assembles transactions.
+
+> Transaction
+> Screen
