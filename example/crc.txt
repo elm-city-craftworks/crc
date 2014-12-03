@@ -1,0 +1,17 @@
+## bin/crc
+
+- Converts plain text representation of CRC into PDF.
+
+> CardReader
+> CardRenderer
+
+## CardReader
+
+- Converts CRC information in text files into an abstract representation
+- Converts page break and horizontal rule into abstract representation
+
+## CardRenderer
+
+- Converts abstract representation of CRC info and renders cards on PDF
+- Handles manual page breaks and drawing horizontal rules
+- Generates links between collaborators on different cards

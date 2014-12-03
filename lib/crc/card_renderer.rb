@@ -42,9 +42,11 @@ module CRC
 
         float do
           indent(10) do
-            card[:responsibilities].each do |e|
-              text "• #{e}", :size => 11
-              move_down 5
+            bounding_box [0, cursor], :width => bounds.width*0.5 do
+              card[:responsibilities].each do |e|
+                text "• #{e}", :size => 11
+                move_down 5
+              end
             end
           end
         end

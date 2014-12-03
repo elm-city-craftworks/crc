@@ -1,0 +1,22 @@
+## Model
+
+- Maintain problem related info.
+- Broadcast change notification.
+
+..........................................................
+
+## View
+
+- Render the model.
+- Transform coordinates.
+
+> Controller
+> Model
+
+## Controller
+
+- Interpret user input.
+- Distribute control.
+
+> View
+> Model
