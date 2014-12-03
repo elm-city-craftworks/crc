@@ -7,6 +7,8 @@ module CRC
         case line
         when /\s*~~~+\s*/
           @cards << :break
+        when /\s*\.\.\.\s*/
+          @cards << :hr
         when /##\s+(.*)/
           @cards << { :candidate => $1, :responsibilities => [], :collaborators => [] }
         when /-\s+(.*)\s+/

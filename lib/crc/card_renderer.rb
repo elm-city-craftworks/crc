@@ -6,12 +6,24 @@ module CRC
     include Prawn::View
 
     def initialize(cards)
-      cards.each { |e| draw_card(e) }
+      cards.each do |e| 
+        case e
+        when :break
+          start_new_page
+        when :hr
+         mask(:stroke_color) do
+           stroke_color "999999"
+           stroke_horizontal_rule
+         end
+
+         move_down 20
+        else
+          draw_card(e)
+        end
+      end 
     end
 
     def draw_card(card)
-      return start_new_page if card == :break
-
       bounding_box [bounds.width*0.15, cursor], :height => 150, :width => bounds.width*0.7 do
         stroke_bounds
 
