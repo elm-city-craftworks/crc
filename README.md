@@ -1,6 +1,9 @@
 # CRC Visualization Tool
 
-This is an experimental project, and isn't production ready.
+![](http://i.imgur.com/za4KD3e.png)
+
+This is an experimental project, and isn't necessarily useful yet.
+But feel free to play around with it!
 
 ## Usage
 
